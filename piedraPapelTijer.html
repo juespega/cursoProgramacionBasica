@@ -24,6 +24,22 @@
         return resultado;
       }
 
+      function combate(maquina, persona) {
+        let result = "";
+        if (maquina == persona) {
+          result = "Empate";
+        } else if (persona == 1 && maquina == 3) {
+          result = "Ganaste";
+        } else if (persona == 2 && maquina == 1) {
+          result = "Ganaste";
+        } else if (persona == 3 && maquina == 2) {
+          result = "Ganaste";
+        } else {
+          result = "Perdiste";
+        }
+        return result;
+      }
+
       // 1 es piedra, 2 es papel y 3 es tijera
       let jugador = 0;
       let pc = aleatorio(1, 3);
@@ -34,18 +50,7 @@
       alert("PC elige: " + eleccion(pc));
 
       //Combate
-
-      if (pc == jugador) {
-        alert("Empate");
-      } else if (jugador == 1 && pc == 3) {
-        alert("Ganaste");
-      } else if (jugador == 2 && pc == 1) {
-        alert("Ganaste");
-      } else if (jugador == 3 && pc == 2) {
-        alert("Ganaste");
-      } else {
-        alert("Perdiste");
-      }
+      alert(combate(pc, jugador));
     </script>
   </head>
   <body>
