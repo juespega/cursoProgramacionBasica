@@ -65,6 +65,7 @@ function ataqueTierra() {
 
 function ataqueAleatorioEnemigo() {
   ataqueAleatorio = aleatorio(1, 3);
+
   if (ataqueAleatorio == 1) {
     ataqueEnemigo = "FUEGO";
   } else if (ataqueAleatorio == 2) {
@@ -72,6 +73,22 @@ function ataqueAleatorioEnemigo() {
   } else {
     ataqueEnemigo = "TIERRA";
   }
+
+  crearMensaje();
+}
+
+function crearMensaje() {
+  let sectionMensajes = document.getElementById("mensajes");
+
+  let parrafo = document.createElement("p");
+  parrafo.innerHTML =
+    "Tu mascota atacó con " +
+    ataqueJugador +
+    ", La mascota del enemigo atacó con " +
+    ataqueEnemigo +
+    " Pendiente 🎉";
+  //La propriedad appendChild permite agregar un elemento al final de un elemento.
+  sectionMensajes.appendChild(parrafo);
 }
 
 function aleatorio(min, max) {
