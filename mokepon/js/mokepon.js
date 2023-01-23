@@ -74,10 +74,24 @@ function ataqueAleatorioEnemigo() {
     ataqueEnemigo = "TIERRA";
   }
 
-  crearMensaje();
+  combate();
 }
 
-function crearMensaje() {
+function combate() {
+  if (ataqueEnemigo == ataqueJugador) {
+    crearMensaje("EMPATE");
+  } else if (ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA") {
+    crearMensaje("GANASTE");
+  } else if (ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO") {
+    crearMensaje("GANASTE");
+  } else if (ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA") {
+    crearMensaje("GANASTE");
+  } else {
+    crearMensaje("PERDISTE");
+  }
+}
+
+function crearMensaje(resultado) {
   let sectionMensajes = document.getElementById("mensajes");
 
   let parrafo = document.createElement("p");
@@ -86,7 +100,8 @@ function crearMensaje() {
     ataqueJugador +
     ", La mascota del enemigo atacó con " +
     ataqueEnemigo +
-    " Pendiente 🎉";
+    " - " +
+    resultado;
   //La propriedad appendChild permite agregar un elemento al final de un elemento.
   sectionMensajes.appendChild(parrafo);
 }
