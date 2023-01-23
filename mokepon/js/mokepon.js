@@ -1,6 +1,16 @@
+//Crear una varible global para que pueda ser utilizada en todas las funciones
+let ataqueJugador;
+
 function iniciarJuego() {
   let botonMascotaJugador = document.getElementById("boton-mascota");
   botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
+
+  let botonFuego = document.getElementById("boton-fuego");
+  botonFuego.addEventListener("click", ataqueFuego);
+  let botonAgua = document.getElementById("boton-agua");
+  botonAgua.addEventListener("click", ataqueAgua);
+  let botonTierra = document.getElementById("boton-tierra");
+  botonTierra.addEventListener("click", ataqueTierra);
 }
 
 //el get.ElementById -> selecciona un objeto del DOM por su id.
@@ -10,6 +20,7 @@ function seleccionarMascotaJugador() {
   let inputRatigueya = document.getElementById("ratigueya");
   let spanMascotaJugador = document.getElementById("mascota-jugador");
 
+  //La propiedad innerHTML permite cambiar el contenido de un elemento.
   if (inputHipodoge.checked) {
     spanMascotaJugador.innerHTML = "Hipodoge";
   } else if (inputCapipepo.checked) {
@@ -34,6 +45,21 @@ function seleccionarMascotaJugadorEnemigo() {
   } else {
     spanMascotaEnemigo.innerHTML = "Ratigueya";
   }
+}
+
+function ataqueFuego() {
+  ataqueJugador = "FUEGO";
+  alert(ataqueJugador);
+}
+
+function ataqueAgua() {
+  ataqueJugador = "AGUA";
+  alert(ataqueJugador);
+}
+
+function ataqueTierra() {
+  ataqueJugador = "TIERRA";
+  alert(ataqueJugador);
 }
 
 function aleatorio(min, max) {
