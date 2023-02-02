@@ -72,3 +72,19 @@ body {
 input {
   display: none;
 }
+
+#seleccionar-ataque {
+  flex-direction: column;
+  align-items: center;
+}
+
+.boton-de-ataque {
+  background: #5f6f94;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  color: #fef5ac;
+  border-color: transparent;
+  width: 100px;
+  font-family: "Comfortaa", cursive;
+}

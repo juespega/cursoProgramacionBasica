@@ -39,7 +39,7 @@ function seleccionarMascotaJugador() {
 
   //Habilitar nuevamente la sección de seleccionar ataque de entrada.
   let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
-  sectionSeleccionarAtaque.style.display = "block";
+  sectionSeleccionarAtaque.style.display = "flex";
 
   let inputHipodoge = document.getElementById("hipodoge");
   let inputCapipepo = document.getElementById("capipepo");
