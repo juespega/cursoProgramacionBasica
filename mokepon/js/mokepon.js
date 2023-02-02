@@ -4,8 +4,16 @@ let ataqueEnemigo;
 let vidasJugador = 3;
 let vidasEnemigo = 3;
 
-//función que llama los botones
+//función que carga la página y llama los botones.
 function iniciarJuego() {
+  //Ocultar la sección de seleccionar ataque de entrada.
+  let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
+  sectionSeleccionarAtaque.style.display = "none";
+
+  //Ocultar la sección del boton reiniciar.
+  let sectionReiniciar = document.getElementById("reiniciar");
+  sectionReiniciar.style.display = "none";
+
   let botonMascotaJugador = document.getElementById("boton-mascota");
   //Escuchar el evento click del boton de mascota
   botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
@@ -23,6 +31,16 @@ function iniciarJuego() {
 
 //el get.ElementById -> selecciona un objeto del DOM por su id.
 function seleccionarMascotaJugador() {
+  //Ocultar la sección de seleccionar mascota, luego de haberla seleccionado.
+  let sectionSeleccionarMascota = document.getElementById(
+    "seleccionar-mascota"
+  );
+  sectionSeleccionarMascota.style.display = "none";
+
+  //Habilitar nuevamente la sección de seleccionar ataque de entrada.
+  let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
+  sectionSeleccionarAtaque.style.display = "block";
+
   let inputHipodoge = document.getElementById("hipodoge");
   let inputCapipepo = document.getElementById("capipepo");
   let inputRatigueya = document.getElementById("ratigueya");
@@ -153,6 +171,10 @@ function crearMensajeFinal(resultadoFinal) {
   botonAgua.disabled = true;
   let botonTierra = document.getElementById("boton-tierra");
   botonTierra.disabled = true;
+
+  //Habilitar nuevamente la sección de reiniciar.
+  let sectionReiniciar = document.getElementById("reiniciar");
+  sectionReiniciar.style.display = "block";
 }
 
 //Función para reiniciar el juego
