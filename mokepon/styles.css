@@ -11,7 +11,7 @@ h1 {
 }
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap");
 
 body {
   font-family: "Comfortaa", cursive;
@@ -56,6 +56,17 @@ body {
 
 .tarjeta-de-makepon img {
   width: 80px;
+}
+
+#boton-mascota {
+  width: 180px;
+  height: 40px;
+  border-radius: 20px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-family: "Comfortaa", cursive;
+  margin-top: 30px;
 }
 
 input {
