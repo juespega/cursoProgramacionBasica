@@ -4,8 +4,10 @@ let ataqueEnemigo;
 let vidasJugador = 3;
 let vidasEnemigo = 3;
 
+//función que llama los botones
 function iniciarJuego() {
   let botonMascotaJugador = document.getElementById("boton-mascota");
+  //Escuchar el evento click del boton de mascota
   botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
 
   let botonFuego = document.getElementById("boton-fuego");
@@ -14,6 +16,9 @@ function iniciarJuego() {
   botonAgua.addEventListener("click", ataqueAgua);
   let botonTierra = document.getElementById("boton-tierra");
   botonTierra.addEventListener("click", ataqueTierra);
+
+  let botonReiniciar = document.getElementById("boton-reiniciar");
+  botonReiniciar.addEventListener("click", reiniciarJuego);
 }
 
 //el get.ElementById -> selecciona un objeto del DOM por su id.
@@ -141,6 +146,19 @@ function crearMensajeFinal(resultadoFinal) {
   parrafo.innerHTML = resultadoFinal;
   //La propriedad appendChild permite agregar un elemento al final de un elemento.
   sectionMensajes.appendChild(parrafo);
+
+  let botonFuego = document.getElementById("boton-fuego");
+  botonFuego.disabled = true;
+  let botonAgua = document.getElementById("boton-agua");
+  botonAgua.disabled = true;
+  let botonTierra = document.getElementById("boton-tierra");
+  botonTierra.disabled = true;
+}
+
+//Función para reiniciar el juego
+function reiniciarJuego() {
+  //objeto al cual se le aplica la funcion reload y reinicia la pagina
+  location.reload();
 }
 
 //Función para generar un número aleatorio entre 1 y 3
