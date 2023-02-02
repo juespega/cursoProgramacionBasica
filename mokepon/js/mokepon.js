@@ -105,6 +105,16 @@ function combate() {
     vidasJugador--;
     spanVidasJugador.innerHTML = vidasJugador;
   }
+
+  revisarVidas();
+}
+
+function revisarVidas() {
+  if (vidasEnemigo == 0) {
+    crearMensajeFinal("FELICITACIONES! Ganaste el juego 😁");
+  } else if (vidasJugador == 0) {
+    crearMensajeFinal("Lo siento! Perdiste el juego 😭");
+  }
 }
 
 function crearMensaje(resultado) {
@@ -119,6 +129,16 @@ function crearMensaje(resultado) {
     ataqueEnemigo +
     " - " +
     resultado;
+  //La propriedad appendChild permite agregar un elemento al final de un elemento.
+  sectionMensajes.appendChild(parrafo);
+}
+
+function crearMensajeFinal(resultadoFinal) {
+  let sectionMensajes = document.getElementById("mensajes");
+
+  //Crea un elemento <p> con el texto resultado Final
+  let parrafo = document.createElement("p");
+  parrafo.innerHTML = resultadoFinal;
   //La propriedad appendChild permite agregar un elemento al final de un elemento.
   sectionMensajes.appendChild(parrafo);
 }
