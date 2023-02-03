@@ -88,3 +88,21 @@ input {
   width: 100px;
   font-family: "Comfortaa", cursive;
 }
+
+#mensajes {
+  width: 280px;
+  background: #97d2ec;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#boton-reiniciar {
+  border: none;
+  background-color: #97d2ec;
+  color: #fef5ac;
+  font-family: "Comfortaa", cursive;
+}

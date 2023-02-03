@@ -141,29 +141,38 @@ function revisarVidas() {
 }
 
 function crearMensaje(resultado) {
-  let sectionMensajes = document.getElementById("mensajes");
+  let sectionMensajes = document.getElementById("resultado");
+  let ataqueDelJugador = document.getElementById("ataque-del-jugador");
+  let ataqueDelEnemigo = document.getElementById("ataque-del-enemigo");
+
+  let notificacion = document.createElement("p");
+  let nuevoAtaquedelJugador = document.createElement("p");
+  let nuevoAtaquedelenemigo = document.createElement("p");
+
+  sectionMensajes.innerHTML = resultado;
+  nuevoAtaquedelJugador.innerHTML = ataqueJugador;
+  nuevoAtaquedelenemigo.innerHTML = ataqueEnemigo;
 
   //Crea un elemento <p> con el texto resultado
-  let parrafo = document.createElement("p");
-  parrafo.innerHTML =
-    "Tu mascota atacó con " +
-    ataqueJugador +
-    ", La mascota del enemigo atacó con " +
-    ataqueEnemigo +
-    " - " +
-    resultado;
+  // let parrafo = document.createElement("p");
+  // parrafo.innerHTML =
+  //   "Tu mascota atacó con " +
+  //   ataqueJugador +
+  //   ", La mascota del enemigo atacó con " +
+  //   ataqueEnemigo +
+  //   " - " +
+  //   resultado;
   //La propriedad appendChild permite agregar un elemento al final de un elemento.
-  sectionMensajes.appendChild(parrafo);
+
+  /* sectionMensajes.appendChild(notificacion); */
+  ataqueDelJugador.appendChild(nuevoAtaquedelJugador);
+  ataqueDelEnemigo.appendChild(nuevoAtaquedelenemigo);
 }
 
 function crearMensajeFinal(resultadoFinal) {
-  let sectionMensajes = document.getElementById("mensajes");
+  let sectionMensajes = document.getElementById("resultado");
 
-  //Crea un elemento <p> con el texto resultado Final
-  let parrafo = document.createElement("p");
-  parrafo.innerHTML = resultadoFinal;
-  //La propriedad appendChild permite agregar un elemento al final de un elemento.
-  sectionMensajes.appendChild(parrafo);
+  sectionMensajes.innerHTML = resultadoFinal;
 
   let botonFuego = document.getElementById("boton-fuego");
   botonFuego.disabled = true;
