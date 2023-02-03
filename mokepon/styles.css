@@ -74,6 +74,11 @@ input {
   display: none;
 }
 
+input:checked + label {
+  width: 180px;
+  background: #97d2ec;
+}
+
 #seleccionar-ataque {
   flex-direction: column;
   align-items: center;
@@ -103,9 +108,11 @@ input {
 
 #boton-reiniciar {
   border: none;
-  background-color: #97d2ec;
+  background-color: #5f6f94;
   color: #fef5ac;
   font-family: "Comfortaa", cursive;
+  border-radius: 20px;
+  padding: 10px;
 }
 
 .ataques {
@@ -117,6 +124,7 @@ input {
 #vidas-enemigo {
   font-size: 32px;
   margin-bottom: 0;
+  color: #fef5ac;
 }
 
 .ataques-jugador,
@@ -124,6 +132,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
 }
 
 @media (max-width: 360px) {
