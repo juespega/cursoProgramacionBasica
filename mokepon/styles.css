@@ -36,7 +36,8 @@ body {
   font-size: 20px;
 }
 
-.tarjetas {
+.tarjetas,
+.tarjetas-ataques {
   display: flex;
   gap: 10px;
 }
@@ -85,7 +86,7 @@ input {
   border-radius: 20px;
   color: #fef5ac;
   border-color: transparent;
-  width: 100px;
+  width: 180px;
   font-family: "Comfortaa", cursive;
 }
 
@@ -105,4 +106,29 @@ input {
   background-color: #97d2ec;
   color: #fef5ac;
   font-family: "Comfortaa", cursive;
+}
+
+.ataques {
+  display: grid;
+  grid-template-columns: 100px 100px;
+}
+
+#vidas-jugador,
+#vidas-enemigo {
+  font-size: 32px;
+  margin-bottom: 0;
+}
+
+.ataques-jugador,
+.ataques-enemigo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 360px) {
+  .tarjetas,
+  .tarjetas-ataques {
+    flex-direction: column;
+  }
 }
