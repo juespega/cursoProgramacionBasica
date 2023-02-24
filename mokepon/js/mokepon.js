@@ -25,21 +25,98 @@ const sectionMensajes = document.getElementById("resultado");
 const ataqueDelJugador = document.getElementById("ataque-del-jugador");
 const ataqueDelEnemigo = document.getElementById("ataque-del-enemigo");
 
+const contenedorTarjetas = document.getElementById("contenedorTarjetas");
+
 // let sectionMensajes = document.getElementById("resultado");
 // let botonFuego = document.getElementById("boton-fuego");
 // let botonAgua = document.getElementById("boton-agua");
 // let botonTierra = document.getElementById("boton-tierra");
 // let sectionReiniciar = document.getElementById("reiniciar");
 
+//arreglo que almacena los objetos de la clase Mokepon
+let mokepones = [];
+
 let ataqueJugador;
 let ataqueEnemigo;
+let opcionDeMokepones;
+
 let vidasJugador = 3;
 let vidasEnemigo = 3;
+
+//Clases
+//las clases inician con mayúsculas
+class Mokepon {
+  constructor(nombre, foto, vida) {
+    this.nombre = nombre;
+    this.foto = foto;
+    this.vida = vida;
+    this.ataques = [];
+  }
+}
+
+//Objetos
+let hipodoge = new Mokepon(
+  "Hipodoge",
+  "./assets/mokepons_mokepon_hipodoge_attack.png",
+  3
+);
+
+let capipepo = new Mokepon(
+  "Capipepo",
+  "./assets/mokepons_mokepon_capipepo_attack.png",
+  3
+);
+
+let ratigueya = new Mokepon(
+  "Ratigueya",
+  "./assets/mokepons_mokepon_ratigueya_attack.png",
+  3
+);
+
+hipodoge.ataques.push(
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "🔥", id: "boton-fuego" },
+  { nombre: "☘️", id: "boton-tierra" }
+);
+
+capipepo.ataques.push(
+  { nombre: "☘️", id: "boton-tierra" },
+  { nombre: "☘️", id: "boton-tierra" },
+  { nombre: "☘️", id: "boton-tierra" },
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "🔥", id: "boton-fuego" }
+);
+
+ratigueya.ataques.push(
+  { nombre: "🔥", id: "boton-fuego" },
+  { nombre: "🔥", id: "boton-fuego" },
+  { nombre: "🔥", id: "boton-fuego" },
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "☘️", id: "boton-tierra" }
+);
+
+mokepones.push(hipodoge, capipepo, ratigueya);
 
 //función que carga la página y llama los botones.
 function iniciarJuego() {
   //Ocultar la sección de seleccionar ataque de entrada.
   sectionSeleccionarAtaque.style.display = "none";
+
+  //metodo que ayuda a iterar o recorrer cada uno de los objetos dentro del arreglo.
+  mokepones.forEach((mokepon) => {
+    opcionDeMokepones = `
+    <input type="radio" name="mascota" id=${mokepon.nombre} />
+    <label class="tarjeta-de-makepon" for=${mokepon.nombre}
+      ><p>${mokepon.nombre}</p>
+      <img src=${mokepon.foto}
+        alt=${mokepon.nombre}
+    /></label>
+    `;
+    contenedorTarjetas.innerHTML += opcionDeMokepones;
+  });
+
   //Ocultar la sección del boton reiniciar.
   sectionReiniciar.style.display = "none";
   //Escuchar el evento click del boton de mascota
